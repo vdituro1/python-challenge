@@ -14,6 +14,7 @@ with open(budget_data_csv_path, newline="") as csvfile:
     max_decrease = 0
     max_decrease_date = ""
 
+    # Skip the header row
     next(csv_reader)
 
     # Read through each row of data after the header
@@ -43,7 +44,7 @@ print(f"Average Change: ${round(net_total/total_months,2)}")
 print(f"Greatest Increase In Profits: {max_increase_date} (${max_increase})")
 print(f"Greatest Decrease In Profits: {max_decrease_date} (${max_decrease})")
 
-
+# Write the Output Report
 with open("FinancialAnalysis.txt", 'w') as output_report:
     output_report.write("Financial Analysis\n")
     output_report.write("----------------------------\n")
